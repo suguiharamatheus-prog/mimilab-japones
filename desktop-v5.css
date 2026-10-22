@@ -105,3 +105,9 @@
  #desktopMouthGuide .guidePosterImage{max-width:none;width:710px}
  #desktopMouthGuide .guideCaption{margin:11px 12px 17px}
 }
+/* Keep the full mouth chart directly below its interactive counterpart on desktop */
+@media (min-width:990px){
+ .practiceV3>#desktopMouthGuide{grid-column:1/-1;grid-row:11}
+ .practiceV3>.info{grid-row:12}
+ .practiceV3>.footnote{grid-row:13}
+}
