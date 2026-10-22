@@ -80,3 +80,28 @@
  #desktopMouthGuide .vowelPortrait{height:130px}
  #desktopMouthGuide .guideIntro h2{font-size:16px}
 }
+/* Desktop + image-based articulation reference, with tablet/mobile handling */
+#desktopMouthGuide{margin:14px 0 18px}
+#desktopMouthGuide .guidePosterBox{border:1px solid #356575;border-radius:18px;background:#091627;overflow:hidden}
+#desktopMouthGuide .guidePosterBox summary{cursor:pointer;padding:15px 17px;color:#d5f6ef;font-weight:750;list-style:none;display:flex;gap:8px;align-items:center;justify-content:space-between;user-select:none}
+#desktopMouthGuide .guidePosterBox summary::-webkit-details-marker{display:none}
+#desktopMouthGuide .guidePosterBox summary::after{content:'⌄';font-size:23px;color:#8de7d2;transition:transform .2s}
+#desktopMouthGuide .guidePosterBox[open] summary::after{transform:rotate(180deg)}
+#desktopMouthGuide .guidePosterViewport{padding:0 14px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+#desktopMouthGuide .guidePosterImage{display:block;max-width:100%;width:100%;height:auto;border-radius:13px;border:1px solid #1b4256;box-shadow:0 12px 28px rgba(0,0,0,.22)}
+#desktopMouthGuide .guideCaption{font-size:12px;color:#bbcbdc;line-height:1.65;margin:11px 15px 17px}
+#desktopMouthGuide .guideCaption b{color:#8ae9d1}
+#desktopMouthGuide .guideCaption a{color:#8ae9d1}
+#desktopMouthGuide .guideWarning{display:flex;align-items:flex-start;gap:8px;background:#192638;border:1px solid #3a4d64;padding:10px 12px;border-radius:10px;margin:9px 14px 13px;font-size:12px;color:#c4d6e1;line-height:1.6}
+#desktopMouthGuide .guideWarning strong{color:#abf2df}
+@media(min-width:990px){
+ #desktopMouthGuide .guidePosterBox summary{font-size:17px;padding:18px 22px}
+ #desktopMouthGuide .guidePosterViewport{padding:0 22px}
+ #desktopMouthGuide .guideCaption{font-size:13px;margin:14px 22px 20px}
+ #desktopMouthGuide .guideWarning{margin:12px 22px 18px}
+}
+@media(max-width:679px){
+ #desktopMouthGuide .guidePosterViewport{padding:0 9px}
+ #desktopMouthGuide .guidePosterImage{max-width:none;width:710px}
+ #desktopMouthGuide .guideCaption{margin:11px 12px 17px}
+}
