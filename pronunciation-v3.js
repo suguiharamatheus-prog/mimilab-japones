@@ -3,7 +3,7 @@
 'use strict';
 const eng=window.MimiPitchEngine;if(!eng)return;
 const olderRender=window.render,olderGo=window.go;
-const getWord=id=>WORDS.find(w=>w.id===id);
+const getWord=id=>WORDS.find(w=>w.id===id)||(window.MimiV4?.words?.find(w=>w.id===id));
 const available=['takai','kitte','gakkou','oneesan','oniisan','otousan','obaasan','chiisai','kuru','tani','heta','yoi','san','odaijini'];
 const ruby={
  takai:'<ruby>高<rt>たか</rt></ruby>い',kitte:'<ruby>切手<rt>きって</rt></ruby>',gakkou:'<ruby>学校<rt>がっこう</rt></ruby>',
@@ -16,16 +16,17 @@ let inputStream=null,audioContext=null,source=null,processor=null,muter=null,ana
 let activeAudio=null,recordBusy=false,stopBusy=false;
 const safe=s=>esc(String(s??''));
 const msg=id=>document.getElementById(id);
-function labelFor(w){return ruby[w.id]||safe(w.text)}
+function labelFor(w){return w.cat==='custom'&&/[一-龯々]/.test(w.text)?'<ruby>'+safe(w.text)+'<rt>'+safe(w.kana)+'</rt></ruby>':ruby[w.id]||safe(w.text)}
 function topicText(w){return w.cat==='sokuon'?'Observe a duração da interrupção antes da consoante (っ).':w.cat==='longas'?'Observe a duração da vogal longa; não basta acertar a altura da voz.':'Observe a sequência dos sons e a subida ou descida da voz.';}
 function status(id,value){const e=msg(id);if(e)e.textContent=value;}
 function practiceHtml(){const w=getWord(selected);const hasVoice=!!recordedURL;return `<section class="view practiceV3"><button class="back" type="button" data-navto="home">← Início</button>
 <div class="eyebrow">Laboratório de pronúncia · MimiLab 3.0</div><h1 class="big">Ouça. Grave.<br><span class="mintWord">Compare.</span></h1>
-<p class="muted practiceIntro">Treino de <b>altura, ritmo e duração</b>. Não é uma nota automática de pronúncia. Use fones para ouvir a referência e grave em um ambiente silencioso.</p>
+<p class="muted practiceIntro">Treino de <b>altura, ritmo e duração</b>. A curva mostra uma gravação específica, não o padrão ideal de acento tonal. Desvios na medição não significam que sua fala está errada. Use fones para ouvir a referência e grave em um ambiente silencioso.</p>
 <div class="card featured practiceTarget"><div class="mini">Palavra escolhida</div><div class="pitchTarget">${labelFor(w)}</div><div class="mini">${safe(w.kana)} · ${safe(w.pt)}</div><p class="mini" style="margin-top:9px">${safe(topicText(w))}</p>
 <div class="practiceControls"><button class="btn ghost" type="button" data-practice-audio="ref">▶ Ouvir japonês</button><button class="btn ghost" type="button" data-practice-audio="slow">▶ Japonês 0,8×</button></div>
 <div class="microStatus" id="practiceRef" role="status">${safe(refNotice||'Carregando referência para análise…')}</div></div>
 <div class="sectionbar"><h2>Escolha uma palavra</h2></div><div class="pitchPick">${available.map(id=>{const q=getWord(id);return `<button type="button" class="toggle ${id===selected?'active':''}" data-practice-word="${id}">${safe(q.text)}</button>`}).join('')}</div>
+${window.MimiV4?.panel?.()||''}
 <div class="card practiceRecorder"><div class="sectionbar" style="margin:0 0 8px"><h2>🎙 Grave sua voz</h2><span class="mini">até 5 segundos</span></div>
 <p class="mini">Toque em Gravar e diga a palavra uma vez. Depois você poderá ouvir sua voz e a gravação japonesa lado a lado.</p>
 <div class="micLevel"><div id="micLevelFill"></div></div><div class="practiceControls"><button class="btn" type="button" data-practice-action="record" ${live||recordBusy?'disabled':''}>${live?'● Gravando…':'🎙 Gravar minha voz'}</button><button class="btn ghost" type="button" data-practice-action="stop" ${live?'':'disabled'}>■ Parar</button></div>
@@ -37,6 +38,7 @@ function practiceHtml(){const w=getWord(selected);const hasVoice=!!recordedURL;r
 <canvas id="practiceCanvas" aria-label="${viewMode==='tone'?'Comparação da altura relativa da voz':'Comparação visual de intensidade, duração e pausas'}" width="640" height="250"></canvas>
 <div class="practiceValues" id="practiceValues"></div><div class="pitchFeedback" id="practiceFeedback" role="status"></div>
 </div>
+${window.MimiV4?.mouth?.()||''}
 <div class="info"><span class="icon">ⓘ</span><span><b>Importante:</b> o gráfico mostra pistas acústicas, não se suas palavras estão corretas. Diferenças de voz, velocidade e gravação podem mudar as curvas. Silêncios também ocorrem em consoantes e vogais desvozeadas. Não dá para determinar se um っ ou uma vogal está correto apenas pela curva.</span></div>
 <p class="footnote">Privacidade: microfone e análise processados localmente. A gravação temporária não é enviada ao site, nem salva em sua conta. Os áudios de referência são baixados do Wikimedia Commons.</p>
 </section>`;}
@@ -68,7 +70,7 @@ function updateAnalysis(){const target=msg('practiceValues'),feedback=msg('pract
   out=Math.abs(diff)<.13?'As durações medidas são semelhantes. Compare as pausas e as vogais pelo ouvido.':diff>.13?'Sua fala ficou mais longa que a gravação japonesa. Ouça a diferença de ritmo.':'Sua fala ficou mais curta que a gravação japonesa. Ouça se alguma vogal ou pausa ficou breve demais.';
  }else{
   const fq=eng.pitchQuality(f),uq=eng.pitchQuality(u);
-  out=fq==='insufficient'||uq==='insufficient'?'Não há dados de voz tonal suficientes para avaliar a curva. Isso é comum em sons desvozeados ou microfone com ruído.':'As linhas mostram variações relativas de pitch (não a frequência absoluta). Compare onde a voz sobe e desce. Não é uma classificação de certo/errado.';
+  out=fq==='insufficient'||uq==='insufficient'?'Não há dados de voz tonal suficientes para avaliar a curva. Isso é comum em sons desvozeados ou microfone com ruído.':'As curvas mostram alturas relativas e podem oscilar na passagem por consoantes e sons sem voz. Compare pelo ouvido antes de interpretar a linha. A curva não comprova o padrão lexical correto.';
  }
  if(feedback)feedback.textContent=out;
 }
@@ -87,17 +89,17 @@ window.go=function(p){if(page==='pitch'&&p!=='pitch')dispose();olderGo(p);};
 window.addEventListener('pagehide',dispose);
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&live)void stopMic();});
 const refs=new Map();
-async function loadRef(id){const stamp=++pitchEpoch;const cached=refs.get(id);if(cached){reference=cached;refNotice='Referência humana analisada. A gravação não é um padrão tonal certificado.';status('practiceRef',refNotice);graph();return;}
+async function loadRef(id){const stamp=++pitchEpoch;const target=getWord(id);const url=window.MimiV4?.refUrl?.(id)||target?.url;if(!url){reference=null;refBusy=false;refNotice='Sem modelo gravado para esta palavra. Anexe um áudio japonês para comparar a curva ou grave apenas sua voz.';status('practiceRef',refNotice);graph();return;}const cached=refs.get(id);if(cached){reference=cached;refNotice='Referência humana analisada. A gravação não é um padrão tonal certificado.';status('practiceRef',refNotice);graph();return;}
  refBusy=true;refNotice='Analisando gravação japonesa…';status('practiceRef',refNotice);
  let ctx=null;
- try{const w=getWord(id),res=await fetch(w.url,{mode:'cors'});if(!res.ok)throw new Error('HTTP '+res.status);const bytes=await res.arrayBuffer();const C=window.AudioContext||window.webkitAudioContext;if(!C)throw new Error('AudioContext indisponível');ctx=new C();const decoded=await ctx.decodeAudioData(bytes);
+ try{const res=await fetch(url,{mode:'cors'});if(!res.ok)throw new Error('HTTP '+res.status);const bytes=await res.arrayBuffer();const C=window.AudioContext||window.webkitAudioContext;if(!C)throw new Error('AudioContext indisponível');ctx=new C();const decoded=await ctx.decodeAudioData(bytes);
  let mono=decoded.getChannelData(0);if(decoded.numberOfChannels>1){const second=decoded.getChannelData(1),m=new Float32Array(mono.length);for(let i=0;i<mono.length;i++)m[i]=(mono[i]+second[i])/2;mono=m;}
  const r=eng.analyze(mono,decoded.sampleRate);if(stamp!==pitchEpoch||id!==selected||page!=='pitch')return;if(r.duration<.15)throw new Error('Áudio curto');refs.set(id,r);reference=r;refNotice='Gravação humana analisada. O contorno não é um padrão tonal certificado.';
  }catch(e){if(stamp!==pitchEpoch||id!==selected)return;reference=null;refNotice='Não foi possível desenhar o áudio original. Você ainda pode ouvi-lo e gravar sua voz.';}
  finally{if(ctx)ctx.close().catch(()=>{});if(stamp===pitchEpoch){refBusy=false;status('practiceRef',refNotice);graph();}}
 }
 function play(which){releaseAudio();let url='',rate=.99;
- if(which==='ref'||which==='slow'){url=getWord(selected).url;rate=which==='slow'?.8:1;}
+ if(which==='ref'||which==='slow'){url=window.MimiV4?.refUrl?.(selected)||getWord(selected)?.url;rate=which==='slow'?.8:1;if(!url){status('practiceRef','Sem áudio de referência. Escolha um arquivo abaixo.');return}}
  else {if(!recordedURL){status('practiceStatus','Grave sua voz antes de tentar ouvi-la.');return}url=recordedURL;rate=which==='mine-slow'?.8:1;}
  const a=new Audio();activeAudio=a;a.preload='auto';a.src=url;a.playbackRate=rate;
  // Playback-rate changes should not shift pitch; browsers generally preserve pitch by default.
@@ -142,7 +144,8 @@ async function stopMic(){if(stopBusy||!live)return;stopBusy=true;const duration=
  recordNotice=q==='insufficient'?'Gravado. A altura da voz não pôde ser medida com confiança; ouça e tente novamente.':q==='partial'?'Gravado. Parte da entonação foi captada. Você pode ouvir e comparar.':'Gravado! Ouça sua voz e compare as curvas.';
  stopBusy=false;renderPractice();
 }
-function selectWord(id){if(!getWord(id)||!available.includes(id))return;dispose();selected=id;viewMode='tone';renderPractice();void loadRef(id);}
+function selectWord(id){if(!getWord(id))return;dispose();selected=id;viewMode='tone';renderPractice();void loadRef(id);}
+window.MimiPractice={selected:()=>selected,select:selectWord,refresh:renderPractice,invalidate(id){refs.delete(id);if(id===selected){reference=null;void loadRef(id);renderPractice()}}};
 window.addEventListener('click',event=>{if(page!=='pitch')return;
  const btn=event.target.closest('button');if(!btn)return;
  if(btn.dataset.practiceWord){event.preventDefault();event.stopPropagation();selectWord(btn.dataset.practiceWord);}
