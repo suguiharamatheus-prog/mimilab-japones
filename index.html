@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0e18">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="MimiLab — treino gratuito de escuta do japonês com gravações reais e correção somente ao final.">
+  <title>MimiLab — seu ouvido japonês</title>
+  <style>
+    :root{--bg:#0a0e18;--panel:#111928;--panel2:#152033;--edge:#273348;--sub:#8da0b7;--txt:#eff7fa;--mint:#78dec3;--mint2:#29bca1;--indigo:#9a9ef9;--warn:#eec787;--red:#fa91a4;--radius:24px;color-scheme:dark}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(ellipse 420px 360px at 80% -70px,#1d3150 0%,transparent 75%),linear-gradient(#0a0e18,#0e1420);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN','Yu Gothic',system-ui,sans-serif;line-height:1.45;min-height:100svh;-webkit-font-smoothing:antialiased}button,input{font:inherit}button{cursor:pointer;-webkit-tap-highlight-color:transparent}button:disabled{opacity:.52;cursor:not-allowed}a{color:var(--mint)}button:focus-visible,a:focus-visible{outline:3px solid var(--mint);outline-offset:3px} .hide{display:none!important}
+    .shell{max-width:550px;margin:auto;padding:calc(22px + env(safe-area-inset-top)) 19px calc(106px + env(safe-area-inset-bottom));min-height:100svh}.header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:26px}.brand{display:flex;gap:11px;align-items:center}.logo{width:44px;height:44px;display:grid;place-items:center;border-radius:16px;color:#0c1820;background:linear-gradient(140deg,#a7f3db,#60c9d4);font-size:25px;font-weight:900}.brand strong{letter-spacing:-.025em;font-size:20px}.brand small{display:block;font-size:10px;letter-spacing:.1em;color:var(--sub);text-transform:uppercase}.chip{border:1px solid var(--edge);color:var(--sub);background:#101825;border-radius:100px;padding:8px 11px;font-size:12px}.eyebrow{text-transform:uppercase;font-size:11px;letter-spacing:.19em;color:var(--mint);font-weight:800}.big{font-size:32px;line-height:1.15;letter-spacing:-.05em;margin:10px 0 12px}.muted{color:var(--sub)}p{margin:0 0 14px}.intro{margin-bottom:24px}.intro p{max-width:440px;font-size:14px}.card{background:linear-gradient(165deg,#172438,#111827 85%);border:1px solid var(--edge);border-radius:var(--radius);padding:20px;margin-bottom:14px;box-shadow:0 14px 36px rgba(0,0,0,.06)}.featured{background:radial-gradient(circle at 85% 10%,#255356 0%,transparent 55%),linear-gradient(120deg,#172c3c,#101a2b);border-color:#345e62;padding:22px}.featured h2{font-size:24px;margin:10px 0 8px;letter-spacing:-.035em}.btn{border:0;background:var(--mint);color:#09221e;font-weight:800;border-radius:16px;padding:15px 18px;width:100%;min-height:52px;display:flex;align-items:center;justify-content:center;gap:8px}.btn.ghost{border:1px solid var(--edge);color:var(--txt);background:#1b2638}.btn.tiny{width:auto;min-height:40px;padding:9px 14px;border-radius:12px;font-size:13px}.btn:active,.option:active,.navbtn:active{transform:scale(.985)}.btnrow{display:flex;gap:10px}.btnrow>.btn{flex:1}.metricline{display:flex;align-items:center;gap:9px;color:#c8dde0;font-size:13px;margin-bottom:18px}.metricline b{color:#fff}.pills{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0 7px}.pill{font-size:11px;border-radius:100px;border:1px solid #38615e;padding:5px 9px;color:#a6e8d9;background:#0e3638}.subgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.subgrid .card{margin:0;min-height:137px}.subgrid h3{margin:11px 0 5px;font-size:15px;letter-spacing:-.02em}.subgrid p{font-size:12px;color:var(--sub);margin:0}.cardlink{width:100%;text-align:left;cursor:pointer}.cardlink:hover{border-color:#47837c}.sectionbar{display:flex;align-items:center;justify-content:space-between;margin:23px 0 13px}.sectionbar h2{font-size:15px;margin:0}.info{background:#172231;border:1px solid #283a4c;border-radius:16px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;font-size:12px;color:#b4c5d0;line-height:1.5}.icon{font-size:23px;line-height:1;display:inline-block}.start{display:flex;align-items:center;justify-content:space-between;gap:12px}.mini{color:var(--sub);font-size:12px}.wordpair{font-size:30px;font-weight:800;letter-spacing:-.04em;display:flex;justify-content:center;gap:16px;align-items:center;margin:20px 0}.wordpair span{font-size:11px;color:var(--sub)}.divider{height:1px;background:var(--edge);margin:17px 0}.nav{z-index:50;position:fixed;bottom:0;left:0;right:0;background:rgba(11,16,26,.94);border-top:1px solid #293446;backdrop-filter:blur(18px);padding:10px max(18px,calc((100vw - 520px)/2)) calc(9px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(4,1fr);gap:4px}.navbtn{border:0;background:transparent;color:#8596ac;display:flex;flex-direction:column;align-items:center;gap:5px;padding:5px;border-radius:13px;font-size:10px;font-weight:700}.navbtn .icon{font-size:21px}.navbtn.active{color:var(--mint);background:#182b32}.view{animation:appear .23s ease}@keyframes appear{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+    .back{border:0;background:none;color:var(--sub);font-size:13px;padding:8px 0;margin-bottom:12px}.topline{display:flex;align-items:center;justify-content:space-between}.counter{font-size:12px;color:var(--sub);font-weight:700}.progress{height:6px;border-radius:9px;background:#253346;overflow:hidden;margin:14px 0 28px}.progress>span{background:linear-gradient(90deg,var(--mint2),#a5f3d5);height:100%;display:block;border-radius:9px;transition:width .2s}.questiontitle{font-size:27px;letter-spacing:-.04em;margin:8px 0 10px}.earcard{background:radial-gradient(circle at 50% 0%,#2b5860,transparent 70%),#172737;padding:30px 15px;border-radius:24px;border:1px solid #345a5f;text-align:center;margin:20px 0 19px}.ear{font-size:48px;display:block;margin-bottom:6px}.audioBtn{border:2px solid #85dfca;border-radius:50%;background:#7cdec3;color:#103127;width:92px;height:92px;display:grid;place-items:center;font-size:33px;margin:12px auto;box-shadow:0 0 0 10px #7cdec311}.audioBtn:disabled{opacity:.8}.repeat{font-size:12px;color:#b3d3d7}.loading{font-size:12px;color:var(--warn);min-height:20px}.options{display:grid;gap:10px}.option{min-height:66px;border:1px solid #344057;color:#f1f8f9;background:#182337;border-radius:16px;text-align:left;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;font-weight:750;font-size:19px}.option small{font-size:12px;font-weight:500;color:var(--sub);margin-left:8px}.option.selected{background:#234944;border-color:var(--mint)}.option .mark{font-size:12px;color:var(--sub)}.hints{font-size:12px;color:var(--sub);text-align:center;margin:19px auto}.togglewrap{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.toggle{border:1px solid var(--edge);background:#172137;color:#b7c8d7;border-radius:100px;padding:9px 12px;font-size:12px;font-weight:700}.toggle.active{background:#22554e;border-color:#70c3ad;color:#d5fff6}.listitem{display:flex;gap:12px;align-items:center;background:#141f2e;border:1px solid var(--edge);border-radius:17px;padding:13px;margin-bottom:9px}.listitem .jpn{font-size:21px;font-weight:800}.listitem .reading{font-size:12px;color:var(--sub);margin-top:1px}.listitem .meaning{font-size:12px;color:#aebccc;margin-top:4px}.listitem button{margin-left:auto;min-width:45px;height:45px;border:1px solid #42605f;border-radius:15px;background:#1c3537;color:var(--mint);font-size:20px}.empty{color:var(--sub);padding:25px 0;text-align:center}.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{padding:17px;border-radius:18px;background:#152234;border:1px solid var(--edge)}.stat strong{font-size:29px;display:block;letter-spacing:-.04em}.stat span{font-size:12px;color:var(--sub)}.barline{margin:17px 0}.barline-head{display:flex;justify-content:space-between;font-size:12px;margin-bottom:7px}.barline .bar{height:8px;background:#28374a;border-radius:10px;overflow:hidden}.barline .bar b{height:100%;display:block;background:var(--mint);border-radius:10px}.score{font-size:48px;font-weight:850;letter-spacing:-.06em}.result{border:1px solid var(--edge);background:#151f30;padding:14px;border-radius:17px;margin:10px 0}.result.wrong{border-color:#824553}.result.right{border-color:#356d60}.resulthead{display:flex;justify-content:space-between;align-items:center;font-size:12px;gap:10px}.result b{font-size:19px;display:block;margin:7px 0 4px}.result .meaning{font-size:12px;color:var(--sub)}.roundplay{background:#23443f;border:1px solid #467167;color:var(--mint);border-radius:12px;padding:9px 12px;white-space:nowrap}.sourceLink{font-size:11px;color:#aecabf}.switchline{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:15px 0}.switchline label{font-size:14px}.switchline input{accent-color:#81d9bc;transform:scale(1.25)}.notice{font-size:12px;color:var(--warn);margin-top:12px}.footnote{font-size:11px;color:#72879f;text-align:center;margin:20px 0}.inlinebtn{background:none;border:0;color:var(--mint);text-decoration:underline;padding:0;font-size:inherit}.categoryHeading{font-size:19px;margin:0 0 7px}.sprintClock{font-size:44px;font-weight:850;letter-spacing:-.05em}.sprintHeader{display:flex;justify-content:space-between;align-items:center}.pulse{animation:pulse 1.2s infinite}@keyframes pulse{50%{transform:scale(1.06)}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}@media(min-width:750px){.shell{padding-top:38px}.nav{left:calc(50% - 270px);right:calc(50% - 270px);border:1px solid #283446;border-bottom:0;border-radius:24px 24px 0 0}}
+  </style>
+</head>
+<body>
+<div class="shell">
+  <header class="header"><div class="brand"><div class="logo">み</div><div><strong>MimiLab</strong><small>Ouça. Distinga. Aprenda.</small></div></div><button class="chip" id="soundTop" type="button" title="Verificar o áudio">♫ Testar som</button></header>
+  <main id="app" aria-live="polite"></main>
+</div>
+<nav class="nav" aria-label="Navegação principal">
+  <button type="button" class="navbtn active" data-nav="home"><span class="icon">⌂</span>Início</button>
+  <button type="button" class="navbtn" data-nav="treino"><span class="icon">◎</span>Treinar</button>
+  <button type="button" class="navbtn" data-nav="biblioteca"><span class="icon">▤</span>Áudios</button>
+  <button type="button" class="navbtn" data-nav="progresso"><span class="icon">▥</span>Progresso</button>
+</nav>
+<script>
+'use strict';
+const WORDS=[
+  {
+    "id": "oneesan",
+    "text": "お姉さん",
+    "kana": "おねえさん",
+    "pt": "irmã mais velha",
+    "cat": "longas",
+    "hint": "Observe o som longo ええ.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/LL-Q5287_(jpn)-Fukujinzuke-%E3%81%8A%E5%A7%89%E3%81%95%E3%82%93.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E3%81%8A%E5%A7%89%E3%81%95%E3%82%93.wav"
+  },
+  {
+    "id": "oniisan",
+    "text": "お兄さん",
+    "kana": "おにいさん",
+    "pt": "irmão mais velho",
+    "cat": "longas",
+    "hint": "Observe o som longo いい.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/LL-Q5287_(jpn)-Fukujinzuke-%E3%81%8A%E5%85%84%E3%81%95%E3%82%93.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E3%81%8A%E5%85%84%E3%81%95%E3%82%93.wav"
+  },
+  {
+    "id": "otousan",
+    "text": "お父さん",
+    "kana": "おとうさん",
+    "pt": "pai (de outra pessoa / tratamento)",
+    "cat": "longas",
+    "hint": "Observe o som longo おう.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/LL-Q5287_(jpn)-Fukujinzuke-%E3%81%8A%E7%88%B6%E3%81%95%E3%82%93.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E3%81%8A%E7%88%B6%E3%81%95%E3%82%93.wav"
+  },
+  {
+    "id": "obaasan",
+    "text": "お婆さん",
+    "kana": "おばあさん",
+    "pt": "senhora idosa / avó",
+    "cat": "longas",
+    "hint": "Observe o som longo ああ.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/LL-Q5287_(jpn)-Fukujinzuke-%E3%81%8A%E5%A9%86%E3%81%95%E3%82%93.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E3%81%8A%E5%A9%86%E3%81%95%E3%82%93.wav"
+  },
+  {
+    "id": "chiisai",
+    "text": "小さい",
+    "kana": "ちいさい",
+    "pt": "pequeno",
+    "cat": "longas",
+    "hint": "Observe o いい prolongado.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/LL-Q5287_(jpn)-Fukujinzuke-%E5%B0%8F%E3%81%95%E3%81%84.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E5%B0%8F%E3%81%95%E3%81%84.wav"
+  },
+  {
+    "id": "kitte",
+    "text": "切手",
+    "kana": "きって",
+    "pt": "selo postal",
+    "cat": "sokuon",
+    "hint": "O っ representa uma pausa de articulação antes do て.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/LL-Q5287_(jpn)-Fukujinzuke-%E5%88%87%E6%89%8B.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E5%88%87%E6%89%8B.wav"
+  },
+  {
+    "id": "gakkou",
+    "text": "学校",
+    "kana": "がっこう",
+    "pt": "escola",
+    "cat": "sokuon",
+    "hint": "Repare no っ e em おう.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/LL-Q5287_(jpn)-Fukujinzuke-%E5%AD%A6%E6%A0%A1.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E5%AD%A6%E6%A0%A1.wav"
+  },
+  {
+    "id": "akai",
+    "text": "あか",
+    "kana": "あか",
+    "pt": "vermelho (substantivo)",
+    "cat": "vogais",
+    "hint": "Identifique a vogal final あ.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/LL-Q5287_(jpn)-Fukujinzuke-%E3%81%82%E3%81%8B.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E3%81%82%E3%81%8B.wav"
+  },
+  {
+    "id": "aku",
+    "text": "あく",
+    "kana": "あく",
+    "pt": "abrir (intransitivo)",
+    "cat": "vogais",
+    "hint": "Identifique a vogal final う.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/LL-Q5287_(jpn)-Fukujinzuke-%E3%81%82%E3%81%8F.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E3%81%82%E3%81%8F.wav"
+  },
+  {
+    "id": "haha",
+    "text": "はは",
+    "kana": "はは",
+    "pt": "minha mãe",
+    "cat": "vogais",
+    "hint": "Repare na repetição de は.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/LL-Q5287_(jpn)-Fukujinzuke-%E3%81%AF%E3%81%AF.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E3%81%AF%E3%81%AF.wav"
+  },
+  {
+    "id": "hachi",
+    "text": "はち",
+    "kana": "はち",
+    "pt": "oito",
+    "cat": "vogais",
+    "hint": "Repare no som ち.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/LL-Q5287_(jpn)-Fukujinzuke-%E3%81%AF%E3%81%A1.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E3%81%AF%E3%81%A1.wav"
+  },
+  {
+    "id": "ishi",
+    "text": "いし",
+    "kana": "いし",
+    "pt": "pedra",
+    "cat": "vogais",
+    "hint": "Repare no som し.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/LL-Q5287_(jpn)-Fukujinzuke-%E3%81%84%E3%81%97.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E3%81%84%E3%81%97.wav"
+  },
+  {
+    "id": "ikaga",
+    "text": "いかが",
+    "kana": "いかが",
+    "pt": "como / que tal (polido)",
+    "cat": "vogais",
+    "hint": "Ouça cada mora separadamente.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/LL-Q5287_(jpn)-Fukujinzuke-%E3%81%84%E3%81%8B%E3%81%8C.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E3%81%84%E3%81%8B%E3%81%8C.wav"
+  },
+  {
+    "id": "takai",
+    "text": "高い",
+    "kana": "たかい",
+    "pt": "alto / caro",
+    "cat": "palavras",
+    "hint": "Adjetivo muito comum.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/LL-Q5287_(jpn)-Fukujinzuke-%E9%AB%98%E3%81%84.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E9%AB%98%E3%81%84.wav"
+  },
+  {
+    "id": "heta",
+    "text": "下手",
+    "kana": "へた",
+    "pt": "sem habilidade",
+    "cat": "palavras",
+    "hint": "Não confunda com outros adjetivos.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/LL-Q5287_(jpn)-Fukujinzuke-%E4%B8%8B%E6%89%8B.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E4%B8%8B%E6%89%8B.wav"
+  },
+  {
+    "id": "yoi",
+    "text": "良い",
+    "kana": "よい",
+    "pt": "bom",
+    "cat": "palavras",
+    "hint": "Também pode ser lido よい.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/LL-Q5287_(jpn)-Fukujinzuke-%E8%89%AF%E3%81%84.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E8%89%AF%E3%81%84.wav"
+  },
+  {
+    "id": "kuru",
+    "text": "来る",
+    "kana": "くる",
+    "pt": "vir",
+    "cat": "palavras",
+    "hint": "Verbo irregular.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/LL-Q5287_(jpn)-Fukujinzuke-%E6%9D%A5%E3%82%8B.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E6%9D%A5%E3%82%8B.wav"
+  },
+  {
+    "id": "tani",
+    "text": "谷",
+    "kana": "たに",
+    "pt": "vale",
+    "cat": "palavras",
+    "hint": "Duas moras.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/LL-Q5287_(jpn)-Fukujinzuke-%E8%B0%B7.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E8%B0%B7.wav"
+  },
+  {
+    "id": "san",
+    "text": "さん",
+    "kana": "さん",
+    "pt": "sufixo de tratamento",
+    "cat": "palavras",
+    "hint": "Ouça o ん final.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/LL-Q5287_(jpn)-Fukujinzuke-%E3%81%95%E3%82%93.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E3%81%95%E3%82%93.wav"
+  },
+  {
+    "id": "konbanwa",
+    "text": "こんばんは",
+    "kana": "こんばんは",
+    "pt": "boa noite (cumprimento)",
+    "cat": "frases",
+    "hint": "No cumprimento, o は é pronunciado わ.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/LL-Q5287_(jpn)-Fukujinzuke-%E3%81%93%E3%82%93%E3%81%B0%E3%82%93%E3%81%AF.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E3%81%93%E3%82%93%E3%81%B0%E3%82%93%E3%81%AF.wav"
+  },
+  {
+    "id": "odaijini",
+    "text": "お大事に",
+    "kana": "おだいじに",
+    "pt": "melhoras / cuide-se",
+    "cat": "frases",
+    "hint": "Expressão usada quando alguém está doente.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/LL-Q5287_(jpn)-Fukujinzuke-%E3%81%8A%E5%A4%A7%E4%BA%8B%E3%81%AB.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E3%81%8A%E5%A4%A7%E4%BA%8B%E3%81%AB.wav"
+  },
+  {
+    "id": "okaneo",
+    "text": "お金をおろします",
+    "kana": "おかねをおろします",
+    "pt": "vou sacar dinheiro",
+    "cat": "frases",
+    "hint": "Ouça a expressão completa.",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/81/LL-Q5287_(jpn)-Fukujinzuke-%E3%81%8A%E9%87%91%E3%82%92%E3%81%8A%E3%82%8D%E3%81%97%E3%81%BE%E3%81%99.wav",
+    "source": "https://commons.wikimedia.org/wiki/File:LL-Q5287_(jpn)-Fukujinzuke-%E3%81%8A%E9%87%91%E3%82%92%E3%81%8A%E3%82%8D%E3%81%97%E3%81%BE%E3%81%99.wav"
+  }
+];
+const CATS={longas:{label:'Vogais longas',icon:'〜',description:'Ouça a duração das vogais (おとうさん, おねえさん).'},sokuon:{label:'Pequeno っ',icon:'っ',description:'Perceba a pequena pausa antes de consoantes.'},vogais:{label:'Sons parecidos',icon:'あ',description:'Diferencie vogais e sílabas próximas.'},palavras:{label:'Palavras do dia a dia',icon:'言',description:'Reconheça palavras comuns do japonês.'},frases:{label:'Expressões',icon:'文',description:'Ouça falas curtas e úteis.'}};
+const STORAGE='mimilab-2026-v1';
+const $=s=>document.querySelector(s);const $$=s=>[...document.querySelectorAll(s)];
+const el=$('#app');
+let page='home', selectedCat='todos', session=null, currentAudio=null, audioStatus='', timer=null, filteredSearch='';
+function load(){try{return JSON.parse(localStorage.getItem(STORAGE))||{total:0,correct:0,attempts:[],cat:{},bestSprint:0,settings:{}}}catch{return {total:0,correct:0,attempts:[],cat:{},bestSprint:0,settings:{}}}}
+let db=load();
+function save(){try{localStorage.setItem(STORAGE,JSON.stringify(db))}catch{}}
+function esc(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function stopAudio(){if(currentAudio){currentAudio.pause();currentAudio.removeAttribute('src');currentAudio.load();currentAudio=null}}
+function setStatus(s,isError=false){audioStatus=s;const node=$('#audioState');if(node){node.textContent=s;node.style.color=isError?'#fa91a4':'#eec787'}}
+function playWord(id){const w=WORDS.find(w=>w.id===id);if(!w)return;stopAudio();const audio=new Audio();currentAudio=audio;audio.preload='auto';audio.src=w.url;setStatus('Carregando gravação…');audio.onplaying=()=>{if(currentAudio===audio)setStatus('Reproduzindo gravação humana ✓')};audio.onended=()=>{if(currentAudio===audio)setStatus('Toque para ouvir novamente')};audio.onerror=()=>{if(currentAudio===audio)setStatus('Áudio não carregou. Confira a internet e teste novamente.',true)};audio.play().catch(()=>setStatus('O iPhone bloqueou a reprodução. Toque novamente em ▶.',true));}
+function applyNav(p){$$('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.nav===p));}
+function go(p){if(timer){clearInterval(timer);timer=null}stopAudio();session=null;page=p;applyNav(p);render();window.scrollTo({top:0,behavior:'instant'})}
+function labels(){return Object.entries(CATS).map(([k,c])=>`<button class="toggle ${selectedCat===k?'active':''}" type="button" data-cat="${k}">${c.icon} ${c.label}</button>`).join('')}
+function home(){return `<section class="view"><div class="intro"><div class="eyebrow">耳を育てる • treine seu ouvido</div><h1 class="big">Japonês começa<br>pelo <span style="color:var(--mint)">ouvido.</span></h1><p class="muted">Treine a percepção dos sons japoneses com gravações humanas. Sem voz artificial ou correção durante o teste.</p></div>
+<div class="card featured"><div class="eyebrow">Seu treino de hoje</div><h2>Desafio de escuta</h2><p style="font-size:13px;color:#a9c5cb">12 perguntas • áudio primeiro • resultado no final</p><div class="pills"><span class="pill">Vogais longas</span><span class="pill">Pequeno っ</span><span class="pill">Sons parecidos</span></div><div class="divider"></div><button class="btn" data-action="start-all">▶ &nbsp; Começar avaliação</button></div>
+<div class="sectionbar"><h2>Escolha um modo</h2><span class="mini">Sem assinatura</span></div><div class="subgrid"><button class="card cardlink" data-action="sprint-info"><span class="icon" style="color:var(--warn)">◴</span><h3>Sprint • 60 segundos</h3><p>Quantas palavras você reconhece?</p></button><button class="card cardlink" data-navto="treino"><span class="icon" style="color:var(--indigo)">◎</span><h3>Treinar por som</h3><p>Estude apenas o que precisa.</p></button></div>
+<div class="sectionbar"><h2>Seu progresso</h2><button type="button" class="inlinebtn mini" data-navto="progresso">Ver tudo →</button></div><div class="card"><div class="start"><div><span class="mini">Respostas acumuladas</span><div style="font-size:30px;font-weight:800">${db.total}</div></div><div style="text-align:right"><span class="mini">Precisão geral</span><div style="font-size:30px;font-weight:800;color:var(--mint)">${db.total?Math.round(db.correct/db.total*100):'—'}${db.total?'%':''}</div></div></div></div>
+<div class="info"><span class="icon">ⓘ</span><span>Os arquivos de áudio vêm do Wikimedia Commons e precisam de internet. Esta primeira versão ainda não analisa o tom da sua voz.</span></div></section>`}
+function training(){const count=k=>WORDS.filter(w=>w.cat===k).length;return `<section class="view"><div class="eyebrow">Treinamento focado</div><h1 class="big">Qual som quer<br>praticar?</h1><p class="muted" style="font-size:14px">Escolha uma categoria. A resposta só aparece depois de concluir todas as perguntas.</p><div class="card" style="padding:16px"><div class="togglewrap"><button class="toggle ${selectedCat==='todos'?'active':''}" data-cat="todos">✦ Todos</button>${labels()}</div><p class="mini">${selectedCat==='todos'?`${WORDS.length} gravações disponíveis`:`${count(selectedCat)} gravações nesta categoria`}</p><button class="btn" data-action="start-selected">▶ &nbsp; Iniciar treino</button></div><div class="sectionbar"><h2>Os cinco módulos</h2></div>${Object.entries(CATS).map(([k,c])=>`<button class="card cardlink" style="display:flex;align-items:center;gap:15px" type="button" data-start-cat="${k}"><div style="width:52px;height:52px;min-width:52px;background:#203b42;border-radius:17px;display:grid;place-items:center;color:var(--mint);font-size:26px">${c.icon}</div><div><b>${c.label}</b><div class="mini" style="margin:4px 0">${c.description}</div><span class="mini">${count(k)} áudios · iniciar →</span></div></button>`).join('')}</section>`}
+function optionsFor(w,pool){let candidates=pool.filter(x=>x.id!==w.id);candidates=shuffle(candidates);const n=Math.min(4,pool.length);if(candidates.length<n-1){candidates=shuffle(WORDS.filter(x=>x.id!==w.id))}return shuffle([w,...candidates.slice(0,n-1)]).map(x=>({id:x.id,text:x.text}))}
+function begin(mode,cat='todos'){let pool=cat==='todos'?WORDS:WORDS.filter(w=>w.cat===cat);if(pool.length<2){setStatus('Não há palavras suficientes para esse módulo.',true);return}if(timer)clearInterval(timer);stopAudio();const order=shuffle(pool);let queue=mode==='sprint'?[order[0]]:order.slice(0,Math.min(mode==='quiz'?12:20,order.length));audioStatus='';session={mode,cat,pool,queue,idx:0,answers:[],selected:null,remaining:60,started:Date.now()};page='session';render();if(mode==='sprint'){session.started=Date.now();timer=setInterval(()=>{if(!session||session.mode!=='sprint')return;session.remaining=Math.max(0,60-Math.floor((Date.now()-session.started)/1000));const n=$('#seconds');if(n)n.textContent=session.remaining+'s';if(session.remaining<=0)finish()},250)}}
+function cur(){return session?.queue[session.idx]}
+function sessionView(){if(!session)return home();let w=cur(),s=session;if(!w)return '<p>Sem questão</p>';let opts=optionsFor(w,s.pool);if(!s.optioncache)s.optioncache={};if(!s.optioncache[s.idx])s.optioncache[s.idx]=opts;opts=s.optioncache[s.idx];const quiz=s.mode!=='sprint';return `<section class="view"><button class="back" type="button" data-action="cancel">← Sair do exercício</button><div class="topline"><span class="eyebrow">${s.mode==='sprint'?'Ear Sprint • 60s':s.cat==='todos'?'Avaliação de escuta':esc(CATS[s.cat].label)}</span><span class="counter">${quiz?`${s.idx+1} / ${s.queue.length}`:`${s.answers.length} respondidas`}</span></div>${quiz?`<div class="progress"><span style="width:${s.idx/s.queue.length*100}%"></span></div>`:`<div class="sprintHeader"><div class="mini">Tempo restante</div><div id="seconds" class="sprintClock">${s.remaining}s</div></div><div class="progress"><span style="width:${s.remaining/60*100}%"></span></div>`}<h1 class="questiontitle">O que você ouviu?</h1><p class="muted" style="font-size:13px">Ouça e escolha a palavra correspondente.</p><div class="earcard"><span class="ear" aria-hidden="true">◉</span><button type="button" class="audioBtn" data-play="${w.id}" aria-label="Reproduzir áudio em japonês">▶</button><div class="repeat">Toque para ouvir • quantas vezes quiser</div><div id="audioState" class="loading" role="status">${esc(audioStatus)}</div></div><div class="options">${opts.map((o,i)=>`<button type="button" class="option" data-answer="${o.id}"><span>${esc(o.text)}</span><span class="mark">${String.fromCharCode(65+i)}</span></button>`).join('')}</div><p class="hints">Sem tradução e sem pistas até o final.</p></section>`}
+function answer(id){if(!session||page!=='session')return;let w=cur();if(!w)return;session.answers.push({id:w.id,pick:id,correct:w.id===id,cat:w.cat});stopAudio();session.idx++;if(session.mode==='sprint'){if(session.remaining<=0){finish();return}const recent=session.queue.slice(-3).map(x=>x.id);let opts=shuffle(session.pool.filter(x=>!recent.includes(x.id)));session.queue.push(opts[0]||shuffle(session.pool)[0])}else if(session.idx>=session.queue.length){finish();return}audioStatus='';render()}
+function finish(){if(!session)return;if(timer)clearInterval(timer);timer=null;stopAudio();const ans=session.answers;let good=ans.filter(x=>x.correct).length;db.total+=ans.length;db.correct+=good;for(let a of ans){let c=db.cat[a.cat]||{total:0,correct:0};c.total++;if(a.correct)c.correct++;db.cat[a.cat]=c}if(session.mode==='sprint')db.bestSprint=Math.max(db.bestSprint,good);db.attempts.unshift({date:new Date().toISOString(),mode:session.mode,cat:session.cat,total:ans.length,correct:good});db.attempts=db.attempts.slice(0,40);save();session.finished=true;page='results';render();window.scrollTo({top:0,behavior:'instant'})}
+function results(){let s=session;if(!s)return progressView();const count=s.answers.length,good=s.answers.filter(a=>a.correct).length;return `<section class="view"><div class="eyebrow">Fim do treino</div><div class="card featured" style="margin-top:15px;text-align:center"><div class="mini">Sua pontuação</div><div class="score">${good}<span style="font-size:25px;color:var(--sub)"> / ${count}</span></div><div style="font-size:14px;margin:8px">${count?Math.round(good/count*100):0}% de acertos</div><p class="muted" style="font-size:13px">${count===0?'Você não respondeu nenhuma questão.':good===count?'Você reconheceu todos os áudios desta rodada.':good/count>=.65?'Bom trabalho. Revise os sons marcados abaixo.':'Reouça especialmente os itens com dificuldade.'}</p></div><div class="btnrow"><button class="btn" data-action="again">↻ Repetir</button><button class="btn ghost" data-navto="home">Início</button></div><div class="sectionbar"><h2>Revisão das respostas</h2><span class="mini">Correção ao final</span></div>${s.answers.length?s.answers.map((a,i)=>{let w=WORDS.find(x=>x.id===a.id),pick=WORDS.find(x=>x.id===a.pick);return `<div class="result ${a.correct?'right':'wrong'}"><div class="resulthead"><span>${a.correct?'✓ Acertou':'✕ Precisa revisar'} · ${i+1}ª questão</span><button class="roundplay" type="button" data-play="${w.id}" aria-label="Ouvir ${esc(w.kana)}">▶ Ouvir</button></div><b>${esc(w.text)} <span style="font-size:12px;color:var(--sub)">${esc(w.kana)}</span></b><div class="meaning">${esc(w.pt)}</div>${a.correct?'':`<div class="meaning" style="color:var(--red);margin-top:6px">Sua resposta: ${esc(pick.text)}</div>`}<div class="meaning" style="margin-top:8px">${esc(w.hint)}</div></div>`}).join(''):'<p class="empty">Nenhuma resposta registrada.</p>'}<div class="info"><span class="icon">ⓘ</span><div>Ouvir a palavra isoladamente não é o mesmo que avaliar o acento tonal. O modo de pitch accent será desenvolvido separadamente, com referências específicas.</div></div></section>`}
+function library(){let words=WORDS.filter(w=>`${w.text} ${w.kana} ${w.pt}`.toLowerCase().includes(filteredSearch.toLowerCase())&&(selectedCat==='todos'||w.cat===selectedCat));return `<section class="view"><div class="eyebrow">Biblioteca de pronúncia</div><h1 class="big">Ouça sem pressa.</h1><p class="muted" style="font-size:13px">${WORDS.length} gravações humanas em japonês. A reprodução requer internet.</p><div class="card" style="padding:13px"><input id="search" placeholder="Buscar palavra, leitura ou significado" aria-label="Buscar áudio" value="${esc(filteredSearch)}" style="width:100%;height:44px;padding:0 13px;background:#0f1929;color:#fff;border:1px solid var(--edge);border-radius:12px;outline:none"></div><div class="togglewrap"><button class="toggle ${selectedCat==='todos'?'active':''}" data-cat="todos">Todos</button>${labels()}</div><div id="wordList">${wordListHtml(words)}</div><div id="audioState" role="status" class="notice">${esc(audioStatus)}</div><div class="sectionbar"><h2>Créditos e licenças</h2></div><p class="mini">Áudios: gravações do projeto Lingua Libre por Fukujinzuke, disponíveis no Wikimedia Commons sob CC BY 4.0. Cada gravação tem link para sua página original.</p><p class="mini"><a href="https://creativecommons.org/licenses/by/4.0/deed.pt-br" target="_blank" rel="noopener">Licença CC BY 4.0</a> · <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a></p></section>`}
+function wordListHtml(arr){return arr.map(w=>`<div class="listitem"><div style="min-width:0"><div class="jpn">${esc(w.text)} <span style="font-size:12px;font-weight:500;color:#abc1c9">${esc(w.kana)}</span></div><div class="meaning">${esc(w.pt)}</div><a class="sourceLink" href="${esc(w.source)}" target="_blank" rel="noopener">Fonte ↗</a></div><button type="button" data-play="${w.id}" aria-label="Ouvir ${esc(w.text)}">▶</button></div>`).join('')||'<p class="empty">Nenhuma palavra encontrada.</p>'}
+function progressView(){let attempts=db.attempts;let p=db.total?Math.round(db.correct/db.total*100):0;return `<section class="view"><div class="eyebrow">Acompanhamento</div><h1 class="big">Seu progresso.</h1><p class="muted" style="font-size:13px">Dados guardados somente neste navegador. Sem conta e sem servidor.</p><div class="stats"><div class="stat"><strong>${db.total}</strong><span>Respostas</span></div><div class="stat"><strong>${db.total?p+'%':'—'}</strong><span>Taxa de acertos</span></div><div class="stat"><strong>${attempts.length}</strong><span>Sessões recentes</span></div><div class="stat"><strong>${db.bestSprint}</strong><span>Recorde no Sprint</span></div></div><div class="sectionbar"><h2>Precisão por categoria</h2></div><div class="card">${Object.entries(CATS).map(([k,c])=>{let a=db.cat[k]||{correct:0,total:0},pct=a.total?Math.round(100*a.correct/a.total):0;return `<div class="barline"><div class="barline-head"><span>${c.label}</span><span class="muted">${a.total?pct+'%':'Sem dados'} (${a.total})</span></div><div class="bar"><b style="width:${pct}%"></b></div></div>`}).join('')}</div><div class="sectionbar"><h2>Últimas sessões</h2></div>${attempts.length?attempts.slice(0,8).map(a=>`<div class="listitem" style="justify-content:space-between"><div><strong style="font-size:13px">${a.mode==='sprint'?'Sprint 60s':a.cat==='todos'?'Avaliação geral':CATS[a.cat]?.label||'Treino'}</strong><div class="mini">${new Date(a.date).toLocaleDateString('pt-BR')}</div></div><b>${a.correct} / ${a.total}</b></div>`).join(''):'<p class="empty">Conclua seu primeiro treino para ver os resultados.</p>'}<div class="sectionbar"><h2>Seus dados</h2></div><div class="btnrow"><button class="btn ghost" data-action="export">↓ Exportar</button><button class="btn ghost" data-action="clear">Limpar</button></div><p class="footnote">Privacidade: o MimiLab não envia suas respostas a nenhum servidor.</p></section>`}
+function sprintInfo(){return `<section class="view"><button class="back" type="button" data-navto="home">← Início</button><div class="eyebrow">Desafio rápido</div><h1 class="big">Ear Sprint ⏱</h1><div class="card featured"><span class="icon" style="font-size:45px">◴</span><h2>60 segundos de escuta</h2><p class="muted">Reconheça o maior número possível de gravações em um minuto. Você pode repetir o áudio, mas o relógio continua correndo.</p><button class="btn" data-action="start-sprint">▶ Começar Sprint</button></div><div class="info"><span class="icon">ⓘ</span><span>O relógio começa imediatamente após tocar em “Começar”. A correção aparece apenas no final. Recomendamos testar um áudio antes.</span></div></section>`}
+function render(){if(page==='home')el.innerHTML=home();else if(page==='treino')el.innerHTML=training();else if(page==='biblioteca')el.innerHTML=library();else if(page==='progresso')el.innerHTML=progressView();else if(page==='session')el.innerHTML=sessionView();else if(page==='results')el.innerHTML=results();else if(page==='sprintinfo')el.innerHTML=sprintInfo();}
+document.addEventListener('click',e=>{let t=e.target.closest('button');if(!t)return;let id=t.dataset.play,act=t.dataset.action,nav=t.dataset.navto||t.dataset.nav,cat=t.dataset.cat,one=t.dataset.startCat,ans=t.dataset.answer;if(id){playWord(id);return}if(nav){go(nav);return}if(cat){selectedCat=cat;render();return}if(one){selectedCat=one;begin('quiz',one);return}if(ans){answer(ans);return}if(act==='start-all'){selectedCat='todos';begin('quiz','todos')}if(act==='start-selected')begin('quiz',selectedCat);if(act==='sprint-info'){page='sprintinfo';render()}if(act==='start-sprint')begin('sprint','todos');if(act==='cancel'){if(confirm('Deseja abandonar este treino? As respostas desta rodada não serão salvas.'))go('home')}if(act==='again'){const{mode,cat}=session;begin(mode,cat)}if(act==='export'){const blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='mimilab-progresso.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),2500)}if(act==='clear'){if(confirm('Apagar todo o progresso salvo neste aparelho?')){db={total:0,correct:0,attempts:[],cat:{},bestSprint:0,settings:{}};save();render()}}});
+document.addEventListener('input',e=>{if(e.target.id==='search'){filteredSearch=e.target.value;const matching=WORDS.filter(w=>`${w.text} ${w.kana} ${w.pt}`.toLowerCase().includes(filteredSearch.toLowerCase())&&(selectedCat==='todos'||w.cat===selectedCat));$('#wordList').innerHTML=wordListHtml(matching)}});
+$('#soundTop').addEventListener('click',()=>{go('biblioteca');playWord('takai')});
+window.addEventListener('pagehide',()=>{stopAudio();if(timer)clearInterval(timer)});
+render();
+</script>
+</body>
+</html>
