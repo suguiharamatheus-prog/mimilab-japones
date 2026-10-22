@@ -1,0 +1,26 @@
+/* MimiLab pronunciation v3 */
+.practiceV3 .mintWord{color:var(--mint)}
+.practiceIntro{font-size:13px;line-height:1.65;margin:10px 0 19px}
+.practiceTarget{text-align:center;padding:21px 16px 20px}
+.practiceV3 .pitchTarget{font-size:40px;line-height:2.3;min-height:89px;overflow-wrap:anywhere}
+.practiceV3 .pitchTarget ruby rt{font-size:.35em}
+.practiceControls{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+.practiceControls .btn{flex:1 1 128px;padding:13px 9px;font-size:13px;text-align:center;min-height:47px}
+.practiceControls button:disabled{opacity:.38;cursor:not-allowed}
+.practiceV3 .toggle{font-size:13px;padding:9px 13px;min-height:39px}
+.practiceV3 .pitchPick{gap:7px;margin-bottom:16px}
+.practiceV3 .microStatus{margin:12px 0 2px;color:var(--sub);font-size:12px;line-height:1.5;min-height:20px}
+.practiceRecorder,.practicePlots{margin-top:18px;padding:16px}
+.practiceRecorder .sectionbar,.practicePlots .sectionbar{display:flex;align-items:center;justify-content:space-between}
+.micLevel{height:10px;width:100%;border:1px solid #334859;background:#0d1724;border-radius:999px;overflow:hidden;margin:17px 0 9px}
+#micLevelFill{height:100%;width:0;background:linear-gradient(90deg,#418a8c,#80dfc4);transition:width .08s}
+.practiceTabs{display:flex;gap:9px;margin:10px 0 15px}
+.practiceTabs .toggle{flex:1;min-width:0}
+.practiceV3 .pitchLegend{display:flex;flex-wrap:wrap;gap:13px;margin:10px 0;color:var(--sub);font-size:11px}
+.practiceV3 #practiceCanvas{display:block;width:100%;height:194px;margin:13px 0 12px;border-radius:12px}
+.practiceValues{display:flex;gap:11px;justify-content:space-between;flex-wrap:wrap;color:#a8c2cf;font-size:12px;padding:8px 0;border-bottom:1px solid var(--edge)}
+.practiceValues b{color:var(--white,#eaf3fc)}
+.practiceV3 .pitchFeedback{font-size:13px;color:#dcebf3;min-height:42px;margin:12px 0 0;line-height:1.6}
+.practiceV3 .info{margin-top:19px;font-size:12px;line-height:1.65}
+.practiceV3 .footnote{margin-top:16px}
+@media(max-width:350px){.practiceV3 .pitchTarget{font-size:33px}.practiceControls .btn{flex-basis:120px}.practiceV3 .toggle{font-size:12px}}
